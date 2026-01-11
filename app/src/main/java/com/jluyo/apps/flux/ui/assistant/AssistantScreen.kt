@@ -31,7 +31,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 
@@ -61,6 +60,20 @@ fun AssistantScreen(
                 .fillMaxSize()
                 .padding(padding)
         ) {
+            // Mensaje informativo
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(MaterialTheme.colorScheme.secondaryContainer)
+                    .padding(16.dp)
+            ) {
+                Text(
+                    text = "⚠️ Esta funcionalidad se implementará en una versión futura",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSecondaryContainer
+                )
+            }
+
             LazyColumn(
                 modifier = Modifier
                     .weight(1f)
@@ -85,7 +98,8 @@ fun AssistantScreen(
                     value = inputText,
                     onValueChange = { inputText = it },
                     modifier = Modifier.weight(1f),
-                    placeholder = { Text("Pregunta algo...") }
+                    placeholder = { Text("Pregunta algo...") },
+                    enabled = false // Deshabilitar el campo de texto
                 )
                 Spacer(modifier = Modifier.width(8.dp))
                 IconButton(
@@ -94,7 +108,8 @@ fun AssistantScreen(
                             viewModel.sendMessage(inputText)
                             inputText = ""
                         }
-                    }
+                    },
+                    enabled = false // Deshabilitar el botón de enviar
                 ) {
                     Icon(Icons.AutoMirrored.Filled.Send, contentDescription = "Enviar")
                 }

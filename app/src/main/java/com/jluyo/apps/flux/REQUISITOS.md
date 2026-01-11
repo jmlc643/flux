@@ -1,0 +1,21 @@
+Siguiendo la estructura de carpetas que he dejado, quiero que me hagas una primera versión de una APP Móvil para lo que es la gestión financiera, 
+mi idea es manejar mis finanzas en base a mi sueldo y obvio también a cuanto tengo en total. 
+- La idea es tener una APP funcional en la que yo pueda ingresar mis movimientos segun los meses
+- La APP al inicializarse la primera vez me debe preguntar como me llamo (Almacenarlo en su memoria) y Si voy a escribir mis movimientos desde fechas pasadas o desde el dia de hoy
+- la idea es que al importar movimientos de fechas pasadas se lleve un control desde antes y los movimientos se debe especificar cuanto dinero se esta moviendo (Si es salida o entrada), cual es el motivo y una descripcion pequeña en caso de ser motivo "Otros".
+- Los motivos de entrada pueden ser: Sueldo, Pago de préstamo, Pago de trabajo freelance, Envío de otra cuenta, Otros.
+- Los motivos de salida pueden ser: Compra de articulo, Prestamo a un amigo, Compra de comida, Envio a otra cuenta, Otros.
+- La APP debe mostrar un resumen mensual con el total de entradas, salidas y el balance (El balance debe ser en base a mi sueldo para saber cuanto ahorré).
+- La APP debe tener una sección de ajustes donde pueda cambiar mi nombre, y también resetear todos los datos (Borrar todo).
+- La APP tambien debe mostrar un resumen anual con el total de entradas, salidas y balance anual.
+- La APP debe tener una interfaz amigable y fácil de usar, con botones claros para agregar movimientos, ver resúmenes y acceder a ajustes.
+- La APP debe permitir la exportación de los datos en formato excel o PDF para tener un respaldo externo.
+- La APP debe tener notificaciones opcionales.
+- La APP debe ser compatible con dispositivos Android e iOS.
+- La APP cuando ya te haya preguntado tu nombre no debe volver a preguntarlo.
+- La APP debe permitir la edición y eliminación de movimientos ya ingresados.
+- La APP debe tener un sistema de seguridad básico, como un PIN o huella digital, para proteger la información financiera.
+- La APP debe permitir la categorización de los movimientos para un mejor análisis financiero.
+- La APP debe tener gráficos visuales para representar los ingresos y gastos mensuales y anuales.
+- La APP debe tener un asistente virtual básico que pueda responder preguntas comunes sobre el uso de la APP y ofrecer consejos financieros simples (Como es obvio que se necesitará algun LLM suficiente que me dejes las bases para yo poner mi API KEY y todo eso).
+- La APP se llama Flux y el logo esta a deber asi que puedes poner alguna imagen temporal mientras tanto.

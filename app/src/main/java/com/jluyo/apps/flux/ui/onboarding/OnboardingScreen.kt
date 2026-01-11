@@ -13,11 +13,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import kotlinx.coroutines.launch
 
 @Composable
 fun OnboardingScreen(
@@ -25,6 +27,7 @@ fun OnboardingScreen(
     viewModel: OnboardingViewModel = hiltViewModel()
 ) {
     var name by remember { mutableStateOf("") }
+    val coroutineScope = rememberCoroutineScope()
 
     Column(
         modifier = Modifier.fillMaxSize().padding(16.dp),
@@ -44,8 +47,10 @@ fun OnboardingScreen(
         Button(
             onClick = {
                 if (name.isNotBlank()) {
-                    viewModel.completeOnboarding(name)
-                    onOnboardingComplete()
+                    coroutineScope.launch {
+                        viewModel.completeOnboarding(name)
+                        onOnboardingComplete()
+                    }
                 }
             },
             enabled = name.isNotBlank()
